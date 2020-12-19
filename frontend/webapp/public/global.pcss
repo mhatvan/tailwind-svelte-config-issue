@@ -1,0 +1,237 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent-1-base: #ffc70f;
+  --accent-1-dark: #b28d15;
+  --accent-1-darker: #644e0c;
+  --accent-1-darkest: #322706;
+  --accent-1-light: #ffd54d;
+  --accent-1-lighter: #ffebad;
+  --accent-1-lightest: #fffaeb;
+  --azul: #1e53ff;
+  --black: #000;
+  --bright-light-green: #1eff5a;
+  --error-base: #ff0f4f;
+  --error-dark: #b2153f;
+  --error-darker: #640c23;
+  --error-darkest: #320612;
+  --error-light: #ff4d7c;
+  --error-lighter: #ffadc3;
+  --error-lightest: #ffebf0;
+  --golden-yellow: #ffcb1e;
+  --grey-base: #8a8a8a;
+  --grey-dark: #666666;
+  --grey-darker: #404040;
+  --grey-darkest: #1a1a1a;
+  --grey-light: #b0b0b0;
+  --grey-lighter: #f5f9fa;
+  --grey-lightest: #f7f7f7;
+  --pinky-red: #ff1e44;
+  --primary-base: #0f47ff;
+  --primary-dark: #153ab2;
+  --primary-darker: #0c2264;
+  --primary-darkest: #061132;
+  --primary-lighest-bg: #f5f7ff;
+  --primary-light: #4d77ff;
+  --primary-lighter: #adc2ff;
+  --primary-lightest: #ebf0ff;
+  --success-base: #0fffb3;
+  --success-dark: #15b280;
+  --success-darker: #0c6448;
+  --success-darkest: #063224;
+  --success-light: #4dffc6;
+  --success-lighter: #adffe5;
+  --success-lightest: #ebfff9;
+  --white: #ffffff;
+  --sidebar-expanded: 14.5rem;
+  --sidebar-collapsed: 4rem;
+}
+
+body {
+  font-family: 'Heebo';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--primary-base);
+  @apply font-bold;
+}
+
+h1 {
+  @apply text-5xl mb-6;
+}
+
+h2 {
+  @apply text-3xl mb-4 mt-8;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  @apply text-xl mb-2 mt-4;
+}
+
+p {
+  @apply mb-4;
+}
+
+.brand-color {
+  color: var(--primary-base);
+}
+
+.brand-bg {
+  background: var(--primary-base);
+}
+
+.brand-btn {
+  display: inline-block;
+  padding: 14px;
+  border-radius: 6px;
+  background-color: var(--primary-base);
+  /* text-transform: uppercase; */
+  color: var(--primary-lightest);
+
+  &.btn-sm {
+    padding: 7px 14px;
+  }
+}
+
+.input-field {
+  @apply w-full text-gray-700 border border-gray-400 rounded hover:border-gray-500;
+}
+
+.input-label {
+  @apply mb-2 text-sm font-bold tracking-wide text-gray-700;
+}
+
+.form-validation-error {
+  @apply text-red-600;
+}
+
+.alert-success {
+  @apply inline-block p-3;
+  background: rgba(79, 166, 38, 0.05);
+  color: #4fa626;
+  border: 1px solid #4fa626;
+}
+
+.alert-warning {
+  @apply inline-block p-3;
+  background: var(--accent-1-lighter);
+  color: var(--golden-yellow);
+  border: 1px solid var(--golden-yellow);
+}
+
+.alert-danger {
+  @apply inline-block p-3;
+  background: rgba(232, 32, 32, 0.05);
+  color: #e82020;
+  border: 1px solid #e82020;
+}
+
+.no-auth-box {
+  background-color: var(--white);
+  border: 1px solid #9bcfdc;
+}
+
+.dot {
+  display: inline-block;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin-right: 5px;
+
+  &.btn-sm {
+    padding: 7px 14px;
+  }
+}
+
+svg {
+  @apply inline-block;
+}
+
+.show-password-eye {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.datatable {
+  & th {
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    background: #fff;
+  }
+  & th.sortable {
+    cursor: pointer;
+  }
+  & th.sortable span {
+    padding-right: 16px;
+    position: relative;
+  }
+  & th.sortable span:before,
+  & th.sortable span:after {
+    border: 4px solid transparent;
+    content: '';
+    display: block;
+    height: 0;
+    right: 0;
+    top: 50%;
+    position: absolute;
+    width: 0;
+  }
+
+  & th.sortable span:before {
+    border-bottom-color: #e0e0e0;
+    margin-top: -9px;
+  }
+  & th.sortable span:after {
+    border-top-color: #e0e0e0;
+    margin-top: 1px;
+  }
+  & th.sortable.asc:not(.desc) span:before {
+    border-bottom-color: #9e9e9e;
+  }
+  & th.sortable.desc:not(.asc) span:after {
+    border-top-color: #9e9e9e;
+  }
+  & td {
+    text-align: left;
+    padding: 4px 0;
+  }
+}
+
+/* svelte-simple-datatables overwrites start */
+.browser-default {
+  @apply text-left !important;
+}
+
+.dt-search {
+  margin: 0 !important;
+}
+
+.dt-pagination-rowcount {
+  margin: 0 !important;
+}
+/* svelte-simple-datatables overwrites end */
+
+/* svelte-calendar overwrites start */
+.calendar-button {
+  width: 100% !important;
+  border: 1px solid #cbd5e0 !important;
+  border-radius: 0.25rem !important;
+}
+
+.contents-wrapper {
+  background: white;
+  border: 1px solid #a0aec0;
+}
+/* svelte-calendar overwrites end */
